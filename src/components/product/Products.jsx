@@ -2,20 +2,35 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 const Products = ({ data }) => {
+  const dispatch = useDispatch();
+
   const card = data?.map((el) => (
     <div key={el.id} className="card">
-      <Link href={`/detail/${el.id}`}>
-        <Image src={el.image} width={100} height={100} alt={el.title} />
-      </Link>
+      <Image
+        className="pro__img"
+        src={el.image}
+        width={100}
+        height={100}
+        alt={el.title}
+      />
+      <div className="detail__btns">
+        <button>Li</button>
+        <button>Add</button>
+      </div>
+      <h3 title={el.title}>{el.title}</h3>
     </div>
   ));
   return (
     <section className="product">
       <div className="container">
-        <div style={{ display: "flex", flexWrap: "wrap" }} className="cards">
-          {card}
+        <div className="content">
+          <h1>BEST SELLER</h1>
+          <div className="category__btns"></div>
+          <div className="cards">{card}</div>
+          <button className="btn">load more</button>
         </div>
       </div>
     </section>
