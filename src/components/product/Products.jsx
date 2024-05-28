@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 
 const Products = ({ data }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const card = data?.map((el) => (
     <div key={el.id} className="card">
