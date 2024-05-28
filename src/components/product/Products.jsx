@@ -1,8 +1,8 @@
-// "use client";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Products = ({ data }) => {
   // const dispatch = useDispatch();
@@ -11,10 +11,10 @@ const Products = ({ data }) => {
     <div key={el.id} className="card">
       <Image
         className="pro__img"
-        src={el.image}
         width={100}
         height={100}
-        alt={el.title}
+        src={el.image}
+        alt="img"
       />
       <div className="detail__btns">
         <button>Li</button>
@@ -23,6 +23,7 @@ const Products = ({ data }) => {
       <h3 title={el.title}>{el.title}</h3>
     </div>
   ));
+
   return (
     <section className="product">
       <div className="container">
